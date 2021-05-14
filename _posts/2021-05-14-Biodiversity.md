@@ -46,7 +46,7 @@ We have been given data from four American National Parks. Yosemite, Yellowstone
 
 Start by exploring the data we've been given. This Interactive Treemap contains different species grouped by taxonomic class and conservation status. Zoom in on different categories by clicking on its box. Zoom out by clicking on the navigation bar at the top of the figure. Reveal more information on different elements of the treemap by moving the cursor over it. Tap and Hold to reveal information on a touchscreen.
 
-There are four different conservation status labels. In order to start assigning priority ,we need to understand these labels.
+There are four different conservation status labels. In order to start assigning priority, we need to understand these labels.
 * **Species of Concern**. An informal term used to denote that a species might need conservation actions. "Species of concern" receive no legal protection and the use of the term does not necessarily mean that the species will eventually be proposed for listing as a threatened or endangered species.[<sup>4</sup>](https://www.fws.gov/midwest/es/soc/#:~:text=%22Species%20of%20concern%22%20is%20an%20informal%20term%20that,the%20populations%20and%20degree%20and%20types%20of%20threats.)
 * **Endangered**. Any species which is in danger of extinction.[<sup>5</sup>](https://www.fws.gov/endangered/laws-policies/section-3.html) Defined explicitly in the United States Endangered Species Act. ESA sec. 3(6)
 * **Threatened**.  Any species which is likely to become an endangered species within the foreseeable future.[<sup>5</sup>](https://www.fws.gov/endangered/laws-policies/section-3.html) Also defined explicitly in the United States Endangered Species Act. ESA sec. 3(20)
