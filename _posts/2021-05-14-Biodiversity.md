@@ -84,7 +84,8 @@ Now that we have established the concept of trophic levels, we can start identif
 
 # Predators, Diet, and Trophic Levels of Our Species
 
-After doing some internet research we've found information on the diet and predators of each of our species, which helped us assign trophic levels. We are only doing our best to assign trophic levels. In reality, there are many nuances and things to consider, such as a species being at different trophic levels throughout its life, like a tadpole that becomes a frog. We have two visualizations; a treemap(*Species information on mouse hover, or tap and hold on mobile*), and a trophic pyramid.
+After doing some internet research we've found information on the diet and predators of each of our species, which helped us assign trophic levels. We are only doing our best to assign trophic levels. In reality, there are many nuances and things to consider, such as a species being at different trophic levels throughout its life, like a tadpole that becomes a frog. We have two visualizations; a treemap and a trophic pyramid.<br><br>
+(*Species information on mouse hover, or tap and hold on mobile*)
 
 <iframe src="/img/posts/Biodiversity/Treemap2.html" width="100%" height="768" title="Treemap2" style="border:none"></iframe>
 
@@ -98,7 +99,7 @@ Since `trophic_level` and `conservation_status` are both ordinal categorical val
 
 Our formula is
 
-$$priority score = conservation status*trophic level$$
+$$priority score = conservation status \cdot trophic level$$
 
 We are multiplying instead of adding because we are making the assumption that the factors involved are not independent of each other, rather, that they all can combine in the same ecosystem to create a compounding effect.[<sup>9</sup>](https://sites.tufts.edu/richardvogel/files/2020/04/Geometric-Mean-2020.pdf) This is reflected by the fact that the loss of a single species or habitat can have massive/cascading/chain-reaction effects throughout the whole system. 
 
@@ -122,7 +123,7 @@ $$Priorityscore = \prod_{j=1}^{n}{a_{j}}^{w_j}$$
 
 Applying the formula to get a prioritization score would be
 
-$$priority score = conservation status^{w_1}*trophic level^{w_2}*environmenttransform^{w_3}*pollinationlevel^{w_4}*DiseaseIncubation^{w_5}*Populationestimate^{w_6}*HabitatArea^{w_7}$$
+$$priority score = conservation status^{w_1} \cdot trophic level^{w_2} \cdot environmenttransform^{w_3} \cdot pollinationlevel^{w_4} \cdot DiseaseIncubation^{w_5} \cdot Populationestimate^{w_6} \cdot HabitatArea^{w_7}$$
 
 _*The full weighted product formula has a root of k, where k is the sum of all relative weights. We do not need it if we are only concerned with relative scale and not with exact central location._
 
