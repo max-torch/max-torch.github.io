@@ -22,7 +22,7 @@ Data Scientist with an Electronics Background
 
 I am looking for an employer who shares my ethos
 
-* Make things better. Innovate. Take Risks. Disrupt. 
+* Make things better. Innovate. Experiment. Disrupt. 
 * Seek the Truth. Be Curious. 
 * Learn independently as well as from others. 
 * Maintain financial stability. Plan expenses.
