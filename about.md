@@ -14,7 +14,7 @@ background: '/img/bg-about.jpg'
 </style>
 </head>
 
-<center><img src="/img\Profile head white.jpg"></center>
+<center><img src="/img\circle-cropped.png"></center>
 <center>
 My name is Alexander Lacson<br>
 Data Scientist with an Electronics Background
