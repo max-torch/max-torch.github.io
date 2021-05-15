@@ -179,7 +179,7 @@ The code below produces an interface which allows you to enter information and, 
 
 *Note that as an experiment, null values have been included as their own category. The model also groups people who leave similar fields blank. The values of 'nan' or 'None' or 'No Prefix' means that you are not sharing information for that particular field.*
 
-The interface is not available here because it requires an active python kernel to run. However, you can still see the interface in action via a GIF Image Preview. If you would like to use the interface yourself, open and run 'Report_stable.ipynb' from this project's Github Repository.
+The actual interface is not available here because it requires an active python kernel to run. However, you can still see the interface in action via a GIF Image Preview. If you would like to use the interface yourself, open and run 'Report_stable.ipynb' from this project's Github Repository.
 
 
 ```python
@@ -238,18 +238,6 @@ interact_manual(
     show_same_gender = True
 )
 ```
-
-
-    interactive(children=(Dropdown(description='sex', options=('Male', 'Female'), value='Male'), Dropdown(descript…
-
-
-
-
-
-    <function __main__.make_profile(sex, drugs, orientation, diet_adherence, diet_type, religion_attitude, dog_preference, cat_preference, has_dogs, has_cats, show_same_gender)>
-
-
-
 ### GIF Image Preview
 
 ![Animation.gif](\img\posts\Clustering\Animation.gif)
