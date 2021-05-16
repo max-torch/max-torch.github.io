@@ -5,7 +5,11 @@ subtitle: ""
 background: '/img/posts/Clustering/Cover.jpg'
 ---
 
-Previously, we explored a large dataset containing 60,000 anonymized OKCupid users from the year 2012. In this article, we apply K-Means clustering, a machine learning algorithm, to group our OKCupid users into dating pools, as a means to narrow down their potential matches.
+Previously, [we explored a large dataset](https://nbviewer.jupyter.org/github/max-torch/OKCupid_Codecademy_Portfolio/blob/main/Report_stable.ipynb) containing 60,000 anonymized OKCupid users from the year 2012.
+
+You also might want to check out [Gender Classification with OKCupid Data](/_posts\2021-05-14-ml_revisited.md), which also uses our OKCupid data.
+
+ In this article, we apply K-Means clustering, a machine learning algorithm, to group our OKCupid users into dating pools, as a means to narrow down their potential matches.
 
 Clustering, is a technique which groups similar data points together. Let's use this to group similar people together and recommend who you should date. People in the same cluster as you are the people who we will recommend.
 
