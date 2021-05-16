@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-description: This is what I do.
+description: Find out more.
 background: '/img/bg-about.jpg'
 ---
 
@@ -16,11 +16,19 @@ background: '/img/bg-about.jpg'
 
 <center><img src="/img\circle-cropped.png"></center>
 <center>
+<br>
 My name is Alexander Lacson<br>
 Data Scientist with an Electronics Background
 </center>
 
-I am looking for an employer who shares my ethos
+I consider myself a strategic and analytical person. I prefer to make decisions that are informed by data. When I receive information I prefer to contextualize it in terms of where it came from and its degree of uncertainty.
+
+I believe that innovation only thrives when people feel like they are respected and cared for. People who feel like they do not belong will not share their ideas, or may not even bother to come up with any. 
+
+My idea of a good time would be playing a strategy/roleplaying board game or PC game with friends.
+My idea of a great time would be to work on an innovative technical project with a team of people who are just as passionate as I am about creating something incredible.
+
+I am looking for an employer who shares my ethos:
 
 * Make things Better. Innovate. Experiment. Disrupt. 
 * Seek the Truth. Be Curious. Apply Critical Thinking.
