@@ -13,8 +13,6 @@ background: '/img/posts/Classifier/Cover.jpg'
 
 This is the continuation of a project where I [explore and visualize data from OKCupid](https://nbviewer.jupyter.org/github/max-torch/OKCupid_Codecademy_Portfolio/blob/main/Report_stable.ipynb).
 
-You also might want to check out [Dating Pools using K-Means Clustering](/_posts\2021-05-14-Clustering.md), which also uses our OKCupid data.
-
 ## Block Diagram of Model Tuning and Evaluation
 The diagram below comes from [scikitlearn docs](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). This is the procedure that we will follow. The left section outlines the model parameter tuning process. The right section outlines the model test setup and evaluation process.
 
