@@ -11,10 +11,10 @@ background: '/img/posts/Classifier/Cover.jpg'
     </style>
     </head>
 
-This is the continuation of a project where I [explore and visualize data from OKCupid](https://nbviewer.jupyter.org/github/max-torch/OKCupid_Codecademy_Portfolio/blob/main/Report_stable.ipynb).
+This is the continuation of a project where I analyze data from OKCupid. The first part is [here](https://nbviewer.jupyter.org/github/max-torch/OKCupid_Codecademy_Portfolio/blob/main/Report_stable.ipynb). I felt like the section on predictive models from the previous work needed improvement. This notebook is a revision and expansion of that section.
 
 ## Block Diagram of Model Tuning and Evaluation
-The diagram below comes from [scikitlearn docs](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). This is the procedure that we will follow. The left section outlines the model parameter tuning process. The right section outlines the model test setup and evaluation process.
+The diagram below comes from [scikitlearn docs](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). This is the procedure that we will follow. The left section outlines model parameter tuning process. The right section outlines the model test setup and evaluation process.
 
 <img src="https://scikit-learn.org/stable/_images/grid_search_workflow.png" width="30%" align = "center">
 
@@ -44,7 +44,7 @@ df.info()
     memory usage: 336.8+ MB
     
 
-### Separate Features and Labels
+### Separate Predictors and Labels
 
 
 ```python
@@ -85,10 +85,10 @@ import time
 
 ### Model Parameter Tuning
 
-Some explanations are necessary before you dive in. [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) is a function for repeatedly building a model using different combinations of a set of specified parameter values. In addition, GridsearchCV also makes use of [StratifiedKfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html), to report a model score. It is your decision which evaluation metric to use as the score, but by default accuracy is used. If you do not pass an argument to the `cv` parameter of your GridSearchCV function, it uses k=5, or 5-fold cross validation, by default. However, if you want to specify the parameters, or choose a different validator such as [RepeatStratifiedKfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html),  then you pass a validator function, complete with specified parameters, as the argument of `cv`.
-By not passing an argument below, the default `cv` is used.
+I suppose some explanations are necessary before you dive in below. [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) is a function for repeatedly building a model using different combinations of a set of specified parameter values. In addition, GridsearchCV also makes use of [StratifiedKfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html), to report a model score. It is your decision which evaluation metric to use as the score, but by default accuracy is used. If you do not pass an argument to the *cv* parameter of your GridSearchCV function, it uses k=5, or 5-fold cross validation, by default. However, if you want to specify the parameters, or choose a different validator such as [RepeatStratifiedKfold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html),  then you pass a validator function, complete with specified parameters, as the argument of *cv*.
+By not passing an argument below I have used the default *cv*.
 
-It's a good idea to reconsider what the project objective was. The original goal was "Use Machine Learning to predict gender". In this case we don't want the model to discriminate against gender. As much as possible we want it to perform equally well for either class. Which is why the metric we will use as the model score for GridSearchCV will be accuracy, its default.
+It's a good idea to reconsider what our project objective was. Our original goal was "Use Machine Learning to predict gender". In this case we don't want the model to discriminate against gender. As much as possible we want it to perform equally well for either class. Which is why the metric we will use as the model score for GridSearchCV will be accuracy, its default.
 
 
 ```python
@@ -190,9 +190,6 @@ if execute_rf_search:
 
 The 3D Scatter plot can be rotated, panned, and zoomed.
 <iframe src="/img\posts\Classifier\Random_forest_grid_crossval.html" width="100%" height="650" title="Random Forest CrossVal" style="border:none"></iframe>
-
-Note that with the Random Forest we are still gaining better performance with higher max depth, unlike with the Decision Tree which completely drops after peaking at depth = 7.
-
 #### Tuning Duration
 
 
@@ -202,9 +199,11 @@ duration = round(end-start, 2)
 print("Time to tune 3 models was: " + str(duration) + " secs")
 ```
 
-    Time to tune 3 models was: 24837.2 secs
+    Time to tune 3 models was: 112.48 secs
     
-It took 7 hours to tune the parameters of the three models! Majority of the tuning time was taken up by the Random Forest.
+
+#### Interesting Observation
+Note that with the Random Forest we are still gaining better performance with higher max depth, unlike with the Decision Tree which completely drops after peaking at depth = 7.
 
 ### Dataset splitting
 Let's set aside our test and train sets.
@@ -264,14 +263,11 @@ fig = px.bar(accuracy_df.transpose(), y=model_names, x = "Accuracy", orientation
 fig.update_xaxes(range=(0.84, 0.9))
 fig.update_yaxes(categoryorder = "total ascending")
 fig.update_traces(texttemplate='%{value:.3f}', textposition = 'outside')
-fig.update_layout(title="Accuracy of Different Models", yaxis_title="Model",)
+fig.update_layout(title="Accuracy for Different Models", yaxis_title="Model",)
 fig.show()
 fig.write_html("modelaccuracy.html")
 ```
 <iframe src="/img\posts\Classifier\modelaccuracy.html" width="100%" height="250" title="Model Accuracy" style="border:none"></iframe>
-
-This chart shows us the different model accuracies. What it does not tell us is how well the models performed between Males and Females. For that information we need to look at a Confusion Matrix.
-
 ```python
 from sklearn.metrics import confusion_matrix
 
@@ -300,8 +296,6 @@ confusion_df
 | pred_Male   |         16.7292 |      92.5373  | RandomForestClassifier |
 
 <br>
-
-The Confusion Matrix is a cross-tabulation between the actual gender of our users and the model's predicted gender of our users. In this case we produced a confusion matrix where the values are percentages, but you can also make one that shows counts.
 
 ```python
 import plotly.graph_objects as go
@@ -360,13 +354,13 @@ fig.update_xaxes(range=(0, 100))
 fig.show()
 fig.write_html("confusionbars.html")
 ```
-The plot may be zoomed in on the rightmost region, in order to further highlight differences.
-
 <iframe src="/img\posts\Classifier\confusionbars.html" width="100%" height="400" title="Confusion Bars" style="border:none"></iframe>
+
+The plot may be zoomed in on the rightmost region, in order to further highlight differences.
 
 In all cases the models perform better at classifying males than females. In the best case, the logistic regression model, men are classified 6.77% times better than women. A consequence of either training on a male-skewed dataset or not having enough reliable features that allow the model to confidently classify women (or both).<br>
 
-This is not without consequence in the real world. In the documentary ["Coded Bias"](https://www.netflix.com/title/81328723), during a senate hearing, [Alexandra Ocasio-Cortez questions Joy Buolamwini](https://www.youtube.com/watch?v=mxektG_wU4w). Here is a selected excerpt: <br>
+This is not without consequence in the real world. I recommend the Netflix documentary ["Coded Bias"](https://www.netflix.com/title/81328723). In the documentary, during a senate hearing, [Alexandra Ocasio-Cortez questions Joy Buolamwini](https://www.youtube.com/watch?v=mxektG_wU4w). Here is a selected excerpt: <br>
 
 AOC: "What demographic is it [AI models] mostly effective on?"<br>
 JB: "White Men"<br>
@@ -416,12 +410,12 @@ fig.write_html("rfpreds.html")
 <iframe src="/img\posts\Classifier\dtpreds.html" width="100%" height="500" title="dtpreds" style="border:none"></iframe>
 <iframe src="/img\posts\Classifier\rfpreds.html" width="100%" height="500" title="rfpreds" style="border:none"></iframe>
 
-For all models, `height` and `body_type_curvy` are our top predictors. Probably because men are taller than women on average, and perhaps men are not likely to describe themselves as curvy whereas women are. It is interesting to see that after the top two predictors, there is a different order of feature importances for the random forest compared to the other models.
+For all models, *height* and *body_type_curvy* are our top predictors. Probably because men are taller than women on average, and because men are not likely to describe themselves as curvy whereas women are. It is interesting to see that after the top two predictors, there is a different order of feature importances for the random forest compared to the other models.
 
-With Logistic Regression we can conveniently see which features were more useful for predicting class (male or female) because we have negative and positive weight coefficients, unlike with the Random Forest and Decision Tree.
+With Logistic Regression we can conveniently see which features were more useful for predicting class (male or female) because we have negative and positive weight coefficients, unlike with the Random Forest and Decision Tree. We can see that the model has more confidence in its male predictors than in its female predictors.
 
 ## Next Steps
-Although not presented here, most likely, because the age distribution is skewed towards the young, the model is more effective at classifying young people than old people. One way to alleviate this is to apply a power transform to the age distribution, which makes it more like a normal distribution, before training (you will also have to apply the same transform to the test set before predicting). Then you will have to evaluate the model's performance with young vs old subsets of our data.
+Although not presented here, most likely, because the age distribution is skewed towards the young, the model is more effective at classifying young people than old people. One way to alleviate this is to apply a power transform to the age distribution, which makes it more like a normal distribution, before training (you will also have to apply the same transform to the test set before predicting). We will then have to evaluate the model's performance with young vs old subsets of our data.
 
 Model evaluation can still be taken steps further. In scikit learn there is an [example](https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html) of applying frequentist and bayesian statistical approaches to more definitively make model comparisons.
 
