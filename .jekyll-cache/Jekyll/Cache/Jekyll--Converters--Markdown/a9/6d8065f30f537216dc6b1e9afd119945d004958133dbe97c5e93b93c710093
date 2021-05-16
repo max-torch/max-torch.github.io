@@ -1,0 +1,141 @@
+I"�><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous" />
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<style>
+.katex-display > .katex {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow-x: scroll;
+  text-align: initial;
+}
+.katex {
+  font: normal 1.21em KaTeX_Main, Times New Roman, serif;
+  line-height: 1.2;
+  white-space: normal;
+  text-indent: 0;
+}
+</style>
+</head>
+
+<p>Data Source: Acquired from <a href="https://www.codecademy.com/learn">Codecademy</a>, which says the data is “from the National Parks Service”.</p>
+
+<p>National Parks are large natural or near natural areas set aside to protect large-scale ecological processes, along with the complement of species and ecosystems characteristic of the area, which also provide a foundation for environmentally and culturally compatible spiritual, scientific, educational, recreational and visitor opportunities.<a href="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park"><sup>1</sup></a> In the United States, there are sixty-three national parks (not to be confused with other kinds of parks).<a href="https://www.nps.gov/aboutus/national-park-system.htm"><sup>2</sup></a> Former US President Barack Obama has been quoted as saying “This [National Parks] was America’s best idea”.<a href="https://www.bing.com/videos/search?q=youtube+obama+national+park&amp;docid=608019961633119782&amp;mid=7F9501A986B7168EFD8F7F9501A986B7168EFD8F&amp;view=detail&amp;FORM=VIRE"><sup>3</sup></a></p>
+
+<h1 id="the-problem">The Problem</h1>
+
+<p>A Data Scientist can find themselves dealing with data from different fields of study. What if one day, as a data scientist, you were given a list of endangered species and tasked with creating a prioritization order for choosing which species to focus on, if manpower and resources are limited? We will pretend we are in that very situation here and explore a possible approach.</p>
+
+<p>We have been given data from four American National Parks. Yosemite, Yellowstone, Bryce, and Great Smoky Mountains.</p>
+
+<h1 id="park-locations">Park Locations</h1>
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1gX-IcVkAyhvlZljzJMCmOUJ1jTef9ffD" width="100%" height="480" title="Park_Locations"></iframe>
+
+<h1 id="species-which-have-conservation-status-labels">Species Which Have Conservation Status Labels</h1>
+
+<iframe src="/img/posts/Biodiversity/Treemap1.html" width="100%" height="768" title="Treemap1" style="border:none"></iframe>
+
+<p>Start by exploring the data we’ve been given. This Interactive Treemap contains different species grouped by taxonomic class and conservation status. Zoom in on different categories by clicking on its box. Zoom out by clicking on the navigation bar at the top of the figure. Reveal more information on different elements of the treemap by moving the cursor over it. Tap and Hold to reveal information on a touchscreen.</p>
+
+<p>There are four different conservation status labels. In order to start assigning priority, we need to understand these labels.</p>
+<ul>
+  <li><strong>Species of Concern</strong>. An informal term used to denote that a species might need conservation actions. “Species of concern” receive no legal protection and the use of the term does not necessarily mean that the species will eventually be proposed for listing as a threatened or endangered species.<a href="https://www.fws.gov/midwest/es/soc/#:~:text=%22Species%20of%20concern%22%20is%20an%20informal%20term%20that,the%20populations%20and%20degree%20and%20types%20of%20threats."><sup>4</sup></a></li>
+  <li><strong>Endangered</strong>. Any species which is in danger of extinction.<a href="https://www.fws.gov/endangered/laws-policies/section-3.html"><sup>5</sup></a> Defined explicitly in the United States Endangered Species Act. ESA sec. 3(6)</li>
+  <li><strong>Threatened</strong>.  Any species which is likely to become an endangered species within the foreseeable future.<a href="https://www.fws.gov/endangered/laws-policies/section-3.html"><sup>5</sup></a> Also defined explicitly in the United States Endangered Species Act. ESA sec. 3(20)</li>
+  <li><strong>In Recovery</strong>. The author could not find an official definition of “In Recovery”. It could be referring to a species undergoing a recovery plan<a href="https://www.esa.org/esa/wp-content/uploads/2016/01/Issue20.pdf"><sup>6</sup></a></li>
+</ul>
+
+<p>Although <em>Species of Concern</em> dominates the group, we can narrow our focus only on <em>Endangered</em> and <em>Threatened</em> species, as those are the only ones offered legal protection at the moment.</p>
+
+<p>There are 14 species listed as endangered and 9 different species listed as threatened. How would we choose which to prioritize? One of the criteria we can use is a species’ level in the food pyramid, known as its trophic level. Here’s an explainer from Brittanica.</p>
+
+<p><strong>Trophic level</strong>, step in a nutritive series, or food chain, of an ecosystem. The organisms of a chain are classified into these levels on the basis of their feeding behaviour. The first and lowest level contains the producers, green plants. The plants or their products are consumed by the second-level organisms—the herbivores, or plant eaters. At the third level, primary carnivores, or meat eaters, eat the herbivores; and at the fourth level, secondary carnivores eat the primary carnivores. These categories are not strictly defined, as many organisms feed on several trophic levels; for example, some carnivores also consume plant materials or carrion and are called omnivores, and some herbivores occasionally consume animal matter. A separate trophic level, the decomposers or transformers, consists of organisms such as bacteria and fungi that break down dead organisms and waste materials into nutrients usable by the producers.<a href="https://www.britannica.com/science/trophic-level"><sup>7</sup></a></p>
+
+<table><tr><td><img src="https://cdn.britannica.com/00/95200-050-F0C768B9/Energy-flow-heat-loss-amount-biomass-land.jpg" width="500" /></td><td><img src="https://cdn.britannica.com/92/180492-050-9389FB50/energy-pyramid-level-organisms-producers-flow-consumers.jpg" width="550" /></td></tr></table>
+
+<p><a href="https://www.britannica.com/science/trophic-level#/media/1/606492/165423">Trophic pyramid</a>, Image, Encyclopædia Britannica, Access Date: May 9, 2021<br />
+<a href="https://www.britannica.com/science/trophic-level#/media/1/606492/228957">Energy pyramid</a>, Image, Encyclopædia Britannica, Access Date: May 9, 2021</p>
+
+<p>Notice the numerical values of energy, kcal, as you go from the bottom to the top. A general trend is that it goes down by a factor of ten each time you ascend a level. This is because an organism only stores 10% of the energy it eats as potential energy in its body. The rest is lost as heat energy or as kinetic energy used to move around and breathe.</p>
+
+<p>Another trend, more emphasized by the pyramid, is that there are less numbers of species towards the top. For our analysis this means that species at the top will be given more importance. If a species at the top goes extinct, there are less, or possibly even none, that are ready to take its place.</p>
+
+<p>Why do we even require that all spaces on the pyramid be occupied? Every single place on the pyramid has an important function. The species at the top regulate the numbers of the species at the bottom. When a species near the bottom gets out of control it can eat up all the food supply, affecting all the other species in the whole ecosystem. Effects that ripple all the way from the top to the bottom of the pyramid are known as <a href="https://en.wikipedia.org/wiki/Trophic_cascade">trophic cascades</a>. A case study is the Gray Wolves of Yellowstone Park. In the 1920s, the Gray Wolves went locally extinct in the Park.</p>
+
+<p><img align="left" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Trophic_Cascade.svg" width="100%" /></p>
+
+<ul>
+  <li><a href="https://upload.wikimedia.org/wikipedia/commons/c/c6/Trophic_Cascade.svg">Original File</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">Attribution-Share Alike 4.0 International</a></li>
+  <li>Credit: Wikimedia Commons User Ccarroll17</li>
+</ul>
+
+<p>“Once the wolves were gone, elk populations began to rise. Over the next few years conditions of Yellowstone National Park declined drastically. A team of scientists visiting Yellowstone in 1929 and 1933 reported, “The range was in deplorable conditions when we first saw it, and its deterioration has been progressing steadily since then.” By this time many biologists were worried about eroding land and plants dying off. The elk were multiplying inside the park and deciduous, woody species such as aspen and cottonwood suffered from overgrazing. The park service started trapping and moving the elk and, when that was not effective, killing them. Elk population control methods continued for more than 30 years. Elk control prevented further degradation of the range, but didn’t improve its overall condition”<a href="https://en.wikipedia.org/wiki/History_of_wolves_in_Yellowstone#Ecological_impacts"><sup>8</sup></a></p>
+
+<p>The Gray Wolves were reintroduced into the park in the 1990s. As a result, the Elk populations were reduced, the plants in the park have recovered, and the overall health of the Yellowstone ecosystem has greatly improved. The wolves do not feed on the elk to the point of extinction, but they keep the elk population in check.<a href="https://en.wikipedia.org/wiki/History_of_wolves_in_Yellowstone#Re-introduction_(1995%E2%80%93present)"><sup>8</sup></a></p>
+
+<p>Now that we have established the concept of trophic levels, we can start identifying the levels of the species in our data.</p>
+
+<h1 id="predators-diet-and-trophic-levels-of-our-species">Predators, Diet, and Trophic Levels of Our Species</h1>
+
+<p>After doing some internet research we’ve found information on the diet and predators of each of our species, which helped us assign trophic levels. We are only doing our best to assign trophic levels. In reality, there are many nuances and things to consider, such as a species being at different trophic levels throughout its life, like a tadpole that becomes a frog. We have two visualizations; a treemap(<em>Species information on mouse hover, or tap and hold on mobile</em>), and a trophic pyramid.</p>
+
+<iframe src="/img/posts/Biodiversity/Treemap2.html" width="100%" height="768" title="Treemap2" style="border:none"></iframe>
+
+<p><img src="/img/posts/Biodiversity/Endangered_Pyramid.jpg" alt="jpg" /></p>
+
+<h1 id="calculating-priority-score">Calculating Priority Score</h1>
+
+<p>Since <code class="language-plaintext highlighter-rouge">trophic_level</code> and <code class="language-plaintext highlighter-rouge">conservation_status</code> are both ordinal categorical values we can convert them into numerical values that we can use to calculate a priority score. We will assign values from 1 to 6 for <code class="language-plaintext highlighter-rouge">trophic_level</code>, and 1 to 2 for <code class="language-plaintext highlighter-rouge">conservation_status</code>. Next, we will <a href="https://en.wikipedia.org/wiki/Normalization_(statistics)">normalize</a> the values of <code class="language-plaintext highlighter-rouge">trophic_level</code> and <code class="language-plaintext highlighter-rouge">conservation_status</code>. We are assuming equal distance between trophic levels (which is technically not ideal). A further step for refinement would be to do additional research and consultation to apply appropriate weights/distances to the trophic levels, which is beyond the scope of this article.</p>
+
+<p>Our formula is</p>
+
+\[priority score = conservation status*trophic level\]
+
+<p>We are multiplying instead of adding because we are making the assumption that the factors involved are not independent of each other, rather, that they all can combine in the same ecosystem to create a compounding effect.<a href="https://sites.tufts.edu/richardvogel/files/2020/04/Geometric-Mean-2020.pdf"><sup>9</sup></a> This is reflected by the fact that the loss of a single species or habitat can have massive/cascading/chain-reaction effects throughout the whole system.</p>
+
+<p>In the figure below, the size of each box represents our calculated relative importance of each species. (<em>Species information on mouse hover, or tap and hold on mobile</em>)</p>
+
+<iframe src="/img/posts/Biodiversity/Treemap3.html" width="100%" height="768" title="Treemap3" style="border:none"></iframe>
+
+<h1 id="next-steps">Next Steps</h1>
+
+<p>There is much room for improvement. More factors can be added, and relative weights can be assigned to each factor. Additional factors for each species could be:</p>
+
+<ul>
+  <li>Transformative effect on the environment</li>
+  <li>Pollinator of plants</li>
+  <li>Incubator of disease-causing microbes</li>
+  <li>Current Population Estimate</li>
+  <li>Size and range of animal habitat</li>
+</ul>
+
+<p>A modified* weighted product formula for decision-making  is</p>
+
+\[Priorityscore = \prod_{j=1}^{n}{a_{j}}^{w_j}\]
+
+<p>Applying the formula to get a prioritization score would be</p>
+
+\[priority score = conservation status^{w_1}*trophic level^{w_2}*environmenttransform^{w_3}*pollinationlevel^{w_4}*DiseaseIncubation^{w_5}*Populationestimate^{w_6}*HabitatArea^{w_7}\]
+
+<p><em>*The full weighted product formula has a root of k, where k is the sum of all relative weights. We do not need it if we are only concerned with relative scale and not with exact central location.</em></p>
+
+<h1 id="references">References</h1>
+
+<ol>
+  <li><a href="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park">“Category II: National Park”</a>. IUCN. 5 February 2016.</li>
+  <li><a href="https://www.nps.gov/aboutus/national-park-system.htm">“National Park System”</a>. National Park Service. 9 May 2021.</li>
+  <li>National Geographic. (2016, June 19). <a href="https://www.youtube.com/watch?v=cF2ZmWfnXDw">“America’s Best Idea” - President Obama on National Parks</a>. [Video]. YouTube.</li>
+  <li><a href="https://www.fws.gov/midwest/es/soc/#:~:text=%22Species%20of%20concern%22%20is%20an%20informal%20term%20that,the%20populations%20and%20degree%20and%20types%20of%20threats.">“Species of Concern”</a>. US Fish &amp; Wildlife Service. 9 May 2021.</li>
+  <li><a href="https://www.fws.gov/endangered/laws-policies/section-3.html">“Endangered Species Act, Section 3”</a>. US Fish &amp; Wildlife Service. 9 May 2021.</li>
+  <li>Evans <em>et al</em>. (Winter 2016). <a href="https://www.esa.org/esa/wp-content/uploads/2016/01/Issue20.pdf">“Species Recovery in the United States:
+Increasing the Effectiveness of the
+Endangered Species Act”</a>. Issues In Ecology. 9 May 2021.</li>
+  <li><a href="https://www.britannica.com/science/trophic-level">“Trophic Level”</a>. In Encyclopædia Britannica online. 9 May 2021.</li>
+  <li><a href="https://en.wikipedia.org/wiki/History_of_wolves_in_Yellowstone#Ecological_impacts">“History of Wolves in Yellowstone”</a>. Wikipedia. 9 May 2021</li>
+  <li>Richard M. Vogel (2020): <a href="https://doi.org/10.1080/03610926.2020.1743313">The geometric mean?</a>, Communications in Statistics - Theory and Methods, DOI: 10.1080/03610926.2020.1743313</li>
+</ol>
+
+:ET
