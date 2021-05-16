@@ -52,7 +52,7 @@ There are four different conservation status labels. In order to start assigning
 * **Threatened**.  Any species which is likely to become an endangered species within the foreseeable future.[<sup>5</sup>](https://www.fws.gov/endangered/laws-policies/section-3.html) Also defined explicitly in the United States Endangered Species Act. ESA sec. 3(20)
 * **In Recovery**. The author could not find an official definition of "In Recovery". It could be referring to a species undergoing a recovery plan[<sup>6</sup>](https://www.esa.org/esa/wp-content/uploads/2016/01/Issue20.pdf)
 
-Although *Species of Concern* dominates the group, we can narrow our focus only on *Endangered* and *Threatened* species, as those are the only ones offered legal protection at the moment.
+Although *Species of Concern* dominates the group, we can narrow our focus only on *Endangered* and *Threatened* species, as those are the only ones offered legal protection.
 
 There are 14 species listed as endangered and 9 different species listed as threatened. How would we choose which to prioritize? One of the criteria we can use is a species' level in the food pyramid, known as its trophic level. Here's an explainer from Brittanica.
 
@@ -85,7 +85,7 @@ Now that we have established the concept of trophic levels, we can start identif
 # Predators, Diet, and Trophic Levels of Our Species
 
 After doing some internet research we've found information on the diet and predators of each of our species, which helped us assign trophic levels. We are only doing our best to assign trophic levels. In reality, there are many nuances and things to consider, such as a species being at different trophic levels throughout its life, like a tadpole that becomes a frog. We have two visualizations; a treemap and a trophic pyramid.<br><br>
-(*Species information on mouse hover, or tap and hold on mobile*)
+(*Species information on mouse hover, tap and hold on mobile*)
 
 <iframe src="/img/posts/Biodiversity/Treemap2.html" width="100%" height="768" title="Treemap2" style="border:none"></iframe>
 
@@ -103,9 +103,11 @@ $$priority score = conservation status \cdot trophic level$$
 
 We are multiplying instead of adding because we are making the assumption that the factors involved are not independent of each other, rather, that they all can combine in the same ecosystem to create a compounding effect.[<sup>9</sup>](https://sites.tufts.edu/richardvogel/files/2020/04/Geometric-Mean-2020.pdf) This is reflected by the fact that the loss of a single species or habitat can have massive/cascading/chain-reaction effects throughout the whole system. 
 
-In the figure below, the size of each box represents our calculated relative importance of each species. (*Species information on mouse hover, or tap and hold on mobile*)
+In the figure below, the size of each box represents our calculated priority score of each species. (*Species information on mouse hover, tap and hold on mobile*)
 
 <iframe src="/img/posts/Biodiversity/Treemap3.html" width="100%" height="768" title="Treemap3" style="border:none"></iframe>
+
+In our treemap, the Grizzly Bear has a higher score than the June Sucker, even though the Grizzly Bear is *threatened* and the June Sucker is *endangered*, which is what we want because we are considering trophic level as well as conservation status. 
 
 # Next Steps
 
