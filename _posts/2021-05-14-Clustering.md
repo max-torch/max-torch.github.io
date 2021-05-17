@@ -138,7 +138,7 @@ if execute:
     plt.show()
 ```
 
-The Inertia vs k graph we now have below took 5 hours to produce (hence the default setting above to skip execution of the code snippet). Inertia, is a metric which represents how spaced out the points of a cluster are relative to its centroid. A line has been drawn over the tail end of the graph so that we can clearly mark where the graph becomes linear. The specific point where the graph becomes linear is known as the elbow point, and is the number of clusters that we should use.
+The Inertia vs k graph below took 5 hours to produce (hence the default setting above to skip execution of the code snippet). Inertia, is a metric which represents how spaced out the points of a cluster are relative to its centroid. A line has been drawn over the tail end of the graph so that we can clearly mark where the graph becomes linear. The specific point where the graph becomes linear is known as the elbow point, and is the number of clusters that we should use.
 
 <img alt="K_Clusters_evaluation_annotated" src="\img\posts\Clustering\K_Clusters_evaluation_annotated.png">
 
