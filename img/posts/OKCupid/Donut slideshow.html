@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #3A01DF;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(189, 189, 189, 0.7);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+<h2 style="text-align:center">Slideshow Gallery</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 21</div>
+    <img src="fig1.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 21</div>
+    <img src="fig2.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 21</div>
+    <img src="fig3.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 21</div>
+    <img src="fig4.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 21</div>
+    <img src="fig5.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 21</div>
+    <img src="fig6.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 21</div>
+    <img src="fig7.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">8 / 21</div>
+    <img src="fig8.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">9 / 21</div>
+    <img src="fig9.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">10 / 21</div>
+    <img src="fig10.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">11 / 21</div>
+    <img src="fig11.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">12 / 21</div>
+    <img src="fig12.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">13 / 21</div>
+    <img src="fig13.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">14 / 21</div>
+    <img src="fig14.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">15 / 21</div>
+    <img src="fig15.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">16 / 21</div>
+    <img src="fig16.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">17 / 21</div>
+    <img src="fig17.svg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">18 / 21</div>
+    <img src="fig18.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">19 / 21</div>
+    <img src="fig19.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">20 / 21</div>
+    <img src="fig20.svg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">21 / 21</div>
+    <img src="fig21.svg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="fig1.svg" style="width:100%" onclick="currentSlide(1)" alt="body_type">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig2.svg" style="width:100%" onclick="currentSlide(2)" alt="drinks">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig3.svg" style="width:100%" onclick="currentSlide(3)" alt="drugs">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig4.svg" style="width:100%" onclick="currentSlide(4)" alt="education">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig5.svg" style="width:100%" onclick="currentSlide(5)" alt="ethnicity">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="fig6.svg" style="width:100%" onclick="currentSlide(6)" alt="job">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig7.svg" style="width:100%" onclick="currentSlide(7)" alt="offspring">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig8.svg" style="width:100%" onclick="currentSlide(8)" alt="orientation">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig9.svg" style="width:100%" onclick="currentSlide(9)" alt="sex">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig10.svg" style="width:100%" onclick="currentSlide(10)" alt="smokes">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig11.svg" style="width:100%" onclick="currentSlide(11)" alt="status">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="fig12.svg" style="width:100%" onclick="currentSlide(12)" alt="diet_type">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig13.svg" style="width:100%" onclick="currentSlide(13)" alt="city">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig14.svg" style="width:100%" onclick="currentSlide(14)" alt="state/country">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig15.svg" style="width:100%" onclick="currentSlide(15)" alt="religion_type">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig16.svg" style="width:100%" onclick="currentSlide(16)" alt="sign_type">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig17.svg" style="width:100%" onclick="currentSlide(17)" alt="dog_preference">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="fig18.svg" style="width:100%" onclick="currentSlide(18)" alt="cat_preference">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig19.svg" style="width:100%" onclick="currentSlide(19)" alt="has_dogs">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig20.svg" style="width:100%" onclick="currentSlide(20)" alt="has_cats">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="fig21.svg" style="width:100%" onclick="currentSlide(21)" alt="num_ethnicities">
+    </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
