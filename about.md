@@ -18,7 +18,7 @@ background: '/img/bg-about.jpg'
 <center>
 <br>
 My name is Alexander Lacson<br>
-Data Scientist with an Electronics Background
+Data Scientist
 </center>
 
 I consider myself a strategic and analytical person. I prefer to make decisions that are informed by data. When I receive information I prefer to contextualize it in terms of where it came from and its degree of uncertainty.
