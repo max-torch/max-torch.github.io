@@ -15,6 +15,12 @@ This is the continuation of a project where I [explore and visualize data from O
 
 You also might want to check out [Dating Pools using K-Means Clustering](/_posts\2021-05-14-Clustering.md), which also uses our OKCupid data.
 
+## Work Skills showcased in this article:
+* Hyperparameter Tuning of Machine Learning Models using scikit-learn
+* Machine Learning Model Evaluation and Comparison
+* Analyzing Top Predictors used by a trained Model
+* Visualization of Machine Learning Tuning, Training, and Evaluation using Plotly
+
 ## Block Diagram of Model Tuning and Evaluation
 The diagram below comes from [scikitlearn docs](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation). This is the procedure that we will follow. The left section outlines the model parameter tuning process. The right section outlines the model test setup and evaluation process.
 

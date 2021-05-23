@@ -13,6 +13,9 @@ You also might want to check out [Gender Classification with OKCupid Data](/_pos
 
 Clustering, is a technique which groups similar data points together. Let's use this to group similar people together and recommend who you should date. People in the same cluster as you are the people who we will recommend.
 
+## Work Skills showcased in this article:
+* Application of K-Means Clustering using scikit-learn
+
 ## Feature Selection
 
 We start by reviewing the features of our users. Which, among the features, would you want your date to have in common with you?

@@ -28,6 +28,12 @@ background: '/img/posts/Biodiversity/c-z-shi--1YK96H2tHM-unsplash.jpg'
 
 Data Source: Acquired from [Codecademy](https://www.codecademy.com/learn), which says the data is "from the National Parks Service".
 
+## Work Skills showcased in this article:
+* Displaying math equations using Latex or Katex
+* Interactive Data Visualization and Exploration using Plotly
+* Online Research to add dimensions to existing data
+* Assigning a quantitative score of importance to different objectives to aid in decision-making 
+
 National Parks are large natural or near natural areas set aside to protect large-scale ecological processes, along with the complement of species and ecosystems characteristic of the area, which also provide a foundation for environmentally and culturally compatible spiritual, scientific, educational, recreational and visitor opportunities.[<sup>1</sup>](https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park) In the United States, there are sixty-three national parks (not to be confused with other kinds of parks).[<sup>2</sup>](https://www.nps.gov/aboutus/national-park-system.htm) Former US President Barack Obama has been quoted as saying "This [National Parks] was America's best idea".[<sup>3</sup>](https://www.bing.com/videos/search?q=youtube+obama+national+park&docid=608019961633119782&mid=7F9501A986B7168EFD8F7F9501A986B7168EFD8F&view=detail&FORM=VIRE)
 
 # The Problem
