@@ -12,4 +12,4 @@ The slideshow can be viewed online [here using nbviewer](https://nbviewer.jupyte
 Work Skills showcased in this article:
 * Creating a Slideshow Presentation from a Jupyter Notebook
 * Embedding Interactive Elements in a Slideshow
-* Understanding the steps in the Data Science Process
+* Understanding of the steps in the Data Science Process
