@@ -21,9 +21,9 @@ My name is Alexander Lacson<br>
 I'm looking for a Data Science Role
 </center>
 
-When the coronavirus pandemic hit, I shifted my focus towards learning Data Science. Now I'm looking for remote Data Science work.
+When the coronavirus pandemic hit, I focused on learning Data Science. Now I'm looking for remote Data Science work.
 
-I consider myself a strategic and analytical person. I prefer to make decisions that are informed by data. When I receive information I prefer to contextualize it in terms of where it came from and its degree of uncertainty.
+I consider myself a strategic and analytical person. I prefer to make decisions that are informed by data. When I receive information, I like to contextualize it in terms of where it came from and its degree of uncertainty.
 
 I believe that innovation only thrives when people feel like they are respected and cared for. People who feel like they do not belong will not share their ideas, or may not even bother to come up with any. 
 
