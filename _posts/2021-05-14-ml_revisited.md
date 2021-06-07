@@ -11,9 +11,9 @@ background: '/img/posts/Classifier/Cover.jpg'
     </style>
     </head>
 
-This is the continuation of a project where I [explore and visualize data from OKCupid](https://nbviewer.jupyter.org/github/max-torch/OKCupid_Codecademy_Portfolio/blob/main/Report_stable.ipynb).
+This is the continuation of a project where I [explore and visualize data from OKCupid](https://max-torch.github.io/2021/05/15/OKCupid.html).
 
-You also might want to check out [Dating Pools using K-Means Clustering](/_posts\2021-05-14-Clustering.md), which also uses our OKCupid data.
+You also might want to check out [Dating Pools using K-Means Clustering](https://max-torch.github.io/2021/05/14/Clustering.html), which also uses our OKCupid data.
 
 ## Work Skills showcased in this article:
 * Hyperparameter Tuning of Machine Learning Models using scikit-learn
