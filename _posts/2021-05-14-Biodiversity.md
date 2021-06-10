@@ -78,9 +78,9 @@ Why do we even require that all spaces on the pyramid be occupied? Every single 
 
 <img align="left" src='https://upload.wikimedia.org/wikipedia/commons/c/c6/Trophic_Cascade.svg' width = "100%">
 
-* [Original File](https://upload.wikimedia.org/wikipedia/commons/c/c6/Trophic_Cascade.svg)
-* [Creative Commons](https://en.wikipedia.org/wiki/en:Creative_Commons) [Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
-* Credit: Wikimedia Commons User Ccarroll17
+[Original File](https://upload.wikimedia.org/wikipedia/commons/c/c6/Trophic_Cascade.svg)<br>
+[Creative Commons](https://en.wikipedia.org/wiki/en:Creative_Commons) [Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en)<br>
+Credit: Wikimedia Commons User Ccarroll17
 
 "Once the wolves were gone, elk populations began to rise. Over the next few years conditions of Yellowstone National Park declined drastically. A team of scientists visiting Yellowstone in 1929 and 1933 reported, "The range was in deplorable conditions when we first saw it, and its deterioration has been progressing steadily since then." By this time many biologists were worried about eroding land and plants dying off. The elk were multiplying inside the park and deciduous, woody species such as aspen and cottonwood suffered from overgrazing. The park service started trapping and moving the elk and, when that was not effective, killing them. Elk population control methods continued for more than 30 years. Elk control prevented further degradation of the range, but didn't improve its overall condition"[<sup>8</sup>](https://en.wikipedia.org/wiki/History_of_wolves_in_Yellowstone#Ecological_impacts)
 
